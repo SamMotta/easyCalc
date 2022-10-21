@@ -20,7 +20,7 @@ function QuadraticFunction() {
     const [result, setResults] = useState<Result | null>(null)
 
     // Calculation almost complete. More tests needed!
-    const calculate: SubmitHandler<Inputs> = (data) => {
+    const calculate: SubmitHandler<Inputs> = (data): void =>  {
         /* Formula 
         delta = b² - 4ac
         
@@ -76,11 +76,11 @@ function QuadraticFunction() {
     }
 
     return (
-        <div className="flex flex-row justify-evenly space-x-reverse space-x-12  pt-16">
+        <div className="flex flex-row justify-evenly space-x-reverse space-x-12 pt-16">
             <form onSubmit={handleSubmit(calculate)} className="flex flex-col justify-between space-y-4">
-                <input {...register("valueA", { required: true, valueAsNumber: true })} type="number" placeholder="Valor de A" className="input input-bordered input-primary w-full max-w-xs" />
-                <input {...register("valueB", { required: true, valueAsNumber: true })} type="number" placeholder="Valor de B" className="input input-bordered input-secondary w-full max-w-xs" />
-                <input {...register("valueC", { required: true, valueAsNumber: true })} type="number" placeholder="Valor de C" className="input input-bordered input-accent w-full max-w-xs" />
+                <input {...register("valueA", { required: true, valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de A" className="input input-bordered input-primary w-full max-w-xs" />
+                <input {...register("valueB", { required: true, valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de B" className="input input-bordered input-secondary w-full max-w-xs" />
+                <input {...register("valueC", { required: true, valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de C" className="input input-bordered input-accent w-full max-w-xs" />
                 <button type="submit" className="btn btn-ghost">Calcular</button>
             </form>
 

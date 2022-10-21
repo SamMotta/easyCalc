@@ -11,7 +11,8 @@ import Home from './pages/Home'
 
 // Math Functions
 import QuadraticFunction from './pages/functions/QuadraticFunction'
-import LinearFunction from './pages/functions/LinearFunction'
+import AffineFunction from './pages/functions/AffineFunction'
+import TemperatureConverter from './pages/other/TemperatureConverter'
 
 const router = createBrowserRouter([
   {
@@ -24,13 +25,17 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "functions/quadraticFunction",
+        path: "funcao/funcaoQuadratica",
         element: <QuadraticFunction />
       },
       {
-        path: "functions/linearFunction",
-        element: <LinearFunction />
-      }
+        path: "funcoes/funcaoAfim",
+        element: <AffineFunction />
+      },
+      {
+        path: "fisica/temperatura",
+        element: <TemperatureConverter />
+      },
     ]
   },
 
