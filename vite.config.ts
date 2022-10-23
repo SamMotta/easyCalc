@@ -11,11 +11,12 @@ export default defineConfig({
       injectRegister: "auto",
       workbox: {
         clientsClaim: true,
-        skipWaiting: true
+        skipWaiting: true,
+        globPatterns: ["**\/*.{js,css,html,svg}"]
       },
 
       devOptions: {
-        enabled: true,      
+        enabled: true
       },
     })
   ]
