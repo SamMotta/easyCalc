@@ -26,7 +26,7 @@ type Result = {
 
 function AffineFunction() {
     const { register, handleSubmit } = useForm<Inputs>()
-    const [result, setResult] = useState<Result | null>(null)
+    const [result, setResult] = useState<Result>()
 
     const calculate: SubmitHandler<Inputs> = (data): void => {
         const { valueA: a, valueB: b, valueX: x } = data;
@@ -48,7 +48,7 @@ function AffineFunction() {
             {result == null
                 ? null
                 : <div className="flex flex-col justify-center max-w-sm">
-                    <label htmlFor="resultDelta" className="text-xl">f({result.valueX}) é igual a {result.functionValue}</label>
+                    <label htmlFor="resultDelta" className="text-xl">f({result.valueX}) é igual a {result.functionValue?.toFixed(2)}</label>
                 </div>
             }
         </div>

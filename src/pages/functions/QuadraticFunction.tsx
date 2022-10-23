@@ -17,7 +17,7 @@ type Result = {
 
 function QuadraticFunction() {
     const { register, handleSubmit } = useForm<Inputs>()
-    const [result, setResults] = useState<Result | null>(null)
+    const [result, setResults] = useState<Result>()
 
     // Calculation almost complete. More tests needed!
     const calculate: SubmitHandler<Inputs> = (data): void =>  {
@@ -88,9 +88,9 @@ function QuadraticFunction() {
             {result == null
                 ? null
                 : <div className="flex flex-col">
-                    <label htmlFor="resultDelta" className="text-lg">Δ.: {result?.delta}</label>
-                    <label htmlFor="resultX1" className="text-lg">X'.: {result?.x1}</label>
-                    <label htmlFor="resultX2" className="text-lg">X''.: {result?.x2}</label>
+                    <label htmlFor="resultDelta" className="text-lg">Δ.: {result?.delta?.toFixed(2)}</label>
+                    <label htmlFor="resultX1" className="text-lg">X'.: {result?.x1?.toFixed(2)}</label>
+                    <label htmlFor="resultX2" className="text-lg">X''.: {result?.x2?.toFixed(2)}</label>
                     <label htmlFor="graphic" className="text-lg">Gráfico.: {result?.graphic}</label>
                     {result.info?.map(infoValue => {
                         return (
