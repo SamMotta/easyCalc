@@ -26,5 +26,5 @@ dev-dist
 *.sw?
 
 # Custom
-public/images/*
+# public/images/*
 calcs.txt
