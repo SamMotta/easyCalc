@@ -12,7 +12,7 @@ type Result = {
     x1?: number;
     x2?: number;
     graphic: string;
-    info?: Array<String>;
+    info: Array<String>;
 }
 
 function QuadraticFunction() {
@@ -53,7 +53,6 @@ function QuadraticFunction() {
             let x1 = (-b + Math.sqrt(delta)) / (2 * a);
             let x2 = (-b - Math.sqrt(delta)) / (2 * a);
 
-            console.table({ delta, x1, x2 });
             info.push("O gráfico “corta” o eixo x em dois pontos, ou seja, temos x' e x''.");
 
             setResults({ delta, x1, x2, graphic, info });
@@ -64,11 +63,10 @@ function QuadraticFunction() {
 
             setResults({ delta, graphic, info });
         } else {
-            // delta = 0
+            // delta it's equal to 0
             let x1 = (-b + Math.sqrt(delta)) / (2 * a);
             let x2 = (-b - Math.sqrt(delta)) / (2 * a);
 
-            console.table({ delta, x1, x2 });
             info.push("O gráfico “corta” o eixo x em um ponto, ou seja, x' = x''.")
 
             setResults({ delta, x1, x2, graphic, info });
@@ -76,7 +74,7 @@ function QuadraticFunction() {
     }
 
     return (
-        <div className="flex flex-row justify-evenly space-x-reverse space-x-12 pt-16">
+        <div className="flex flex-col space-y-6 items-center pt-8">
             <form onSubmit={handleSubmit(calculate)} className="flex flex-col justify-between space-y-4">
                 <input {...register("valueA", { required: true, valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de A" className="input input-bordered input-primary w-full max-w-xs" />
                 <input {...register("valueB", { required: true, valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de B" className="input input-bordered input-secondary w-full max-w-xs" />
@@ -84,17 +82,18 @@ function QuadraticFunction() {
                 <button type="submit" className="btn btn-ghost">Calcular</button>
             </form>
 
-            {/* Colocar a fórmula e fazer um exemplo de como calcular */}
+            {/* Show the formula and put an example of how to calculate */}
             {result == null
                 ? null
-                : <div className="flex flex-col">
-                    <label htmlFor="resultDelta" className="text-lg">Δ.: {result?.delta?.toFixed(2)}</label>
-                    <label htmlFor="resultX1" className="text-lg">X'.: {result?.x1?.toFixed(2)}</label>
-                    <label htmlFor="resultX2" className="text-lg">X''.: {result?.x2?.toFixed(2)}</label>
-                    <label htmlFor="graphic" className="text-lg">Gráfico.: {result?.graphic}</label>
-                    {result.info?.map(infoValue => {
+                : <div className="flex flex-col justify-between space-x-4 overflow-x-hidden">
+                    <label></label>
+                    <label htmlFor="resultDelta" className="text-lg w-full max-w-xs" key="delta">Δ.: {result?.delta?.toFixed(2)}</label>
+                    <label htmlFor="resultX1" className="text-lg w-full max-w-xs" key="firstRoot">X'.: {result?.x1?.toFixed(2)}</label>
+                    <label htmlFor="resultX2" className="text-lg w-full max-w-xs" key="secondRoot">X''.: {result?.x2?.toFixed(2)}</label>
+                    <label htmlFor="graphic" className="text-lg w-full max-w-xs" key="graphic">Gráfico.: {result?.graphic}</label>
+                    {result.info.map(infoValue => {
                         return (
-                            <label htmlFor="otherInfo" className="text-lg">{infoValue}</label>
+                            <label htmlFor="otherInfo" className="text-lg w-full max-w-xs sm:max-w-none mb-5" key="info">{infoValue}</label>
                         )
                     })}
                 </div>
