@@ -64,16 +64,7 @@ function TemperatureConverter() {
     }
 
     return (
-        <div className="flex flex-row justify-evenly space-x-reverse space-x-12 pt-16">
-
-            {/* Old Form */}
-            {/* <form onSubmit={handleSubmit(calculate)} className="flex flex-col justify-between space-y-4">
-                <input {...register("celsius", { valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de Celsius" className="input input-bordered input-primary w-full max-w-xs" />
-                <input {...register("kelvin", { valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de Kelvin" className="input input-bordered input-secondary w-full max-w-xs" />
-                <input {...register("fahrenheit", { valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de Fahrenheit" className="input input-bordered input-accent w-full max-w-xs" />
-                <button type="submit" className="btn btn-ghost">Calcular</button>
-            </form> */}
-
+        <div className="flex flex-col space-y-6 items-center pt-8">
             <form onSubmit={handleSubmit(calculate)} className="flex flex-col justify-between space-y-4">
 
                 <label htmlFor="SelectConversion" className="label">Seleção de escala</label>
@@ -83,7 +74,7 @@ function TemperatureConverter() {
                     <option value="fahrenheit">Fahrenheit</option>
                     <option value="kelvin">Kelvin</option>
                 </select>
-                <input {...register("value", { valueAsNumber: true })} autoComplete="off" type="number" placeholder={option === undefined ? "Valor" : "Valor de " + option[0].toUpperCase() + option.slice(1)} className="input input-bordered input-accent w-full max-w-xs" />
+                <input {...register("value", { valueAsNumber: true })} inputMode="decimal" step={0.01} autoComplete="off" type="number" placeholder={option === undefined ? "Valor" : "Valor de " + option[0].toUpperCase() + option.slice(1)} className="input input-bordered input-accent w-full max-w-xs" />
                 <button type="submit" className="btn btn-ghost">Calcular</button>
             </form>
 

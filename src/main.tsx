@@ -13,7 +13,7 @@ import ErrorPage from './pages/ErrorPage'
 // Math Functions
 import QuadraticFunction from './pages/functions/QuadraticFunction'
 import AffineFunction from './pages/functions/AffineFunction'
-import TemperatureConverter from './pages/other/TemperatureConverter'
+import TemperatureConverter from './pages/physics/TemperatureConverter'
 
 const router = createBrowserRouter([
   {
