@@ -4,6 +4,7 @@ import { useState } from "react"
 import Navbar from "../components/Navbar"
 
 import { getCurrentTheme, setTheme } from "../lib/themeChanger";
+import ReloadPrompt from "../components/ReloadPrompt";
 
 const drawerTitles = "text-xl font-semibold"
 
@@ -23,7 +24,7 @@ function Root() {
         {/* Page content here */}
         <Navbar isDarkMode={isDarkMode} callback={handleChangeTheme} />
         <Outlet />
-        {/* <ReloadPrompt /> */}
+        <ReloadPrompt />
       </div>
       <ul className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
