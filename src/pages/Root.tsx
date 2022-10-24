@@ -17,7 +17,6 @@ function Root() {
     setDarkMode(getCurrentTheme)
   }
 
-
   return (
     <div className="drawer" data-theme={isDarkMode ? "night" : "cupcake"}>
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -25,7 +24,7 @@ function Root() {
         {/* Page content here */}
         <Navbar isDarkMode={isDarkMode} callback={handleChangeTheme} />
         <Outlet />
-        <ReloadPrompt />
+        {/* <ReloadPrompt /> */}
       </div>
       <ul className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
