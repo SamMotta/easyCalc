@@ -10,10 +10,13 @@ import Root from './pages/Root'
 import Home from './pages/Home'
 import ErrorPage from './pages/ErrorPage'
 
-// Math Functions
+// Physics
+import TemperatureConverter from './pages/physics/TemperatureConverter'
+
+// Mathematics
 import QuadraticFunction from './pages/functions/QuadraticFunction'
 import AffineFunction from './pages/functions/AffineFunction'
-import TemperatureConverter from './pages/physics/TemperatureConverter'
+import CrossMultiplication from './pages/other/CrossMultiplication'
 
 const router = createBrowserRouter([
   {
@@ -36,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "fisica/temperatura",
         element: <TemperatureConverter />
+      },
+      {
+        path: "outro/regraTres",
+        element: <CrossMultiplication />
       },
     ]
   },
