@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom"
 import { useState } from "react"
 
 import Navbar from "../components/Navbar"
+import ReloadPrompt from "../components/ReloadPrompt";
 
 import { getCurrentTheme, setTheme } from "../lib/themeChanger";
 
@@ -24,6 +25,7 @@ function Root() {
         {/* Page content here */}
         <Navbar isDarkMode={isDarkMode} callback={handleChangeTheme} />
         <Outlet />
+        <ReloadPrompt />
       </div>
       <ul className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>

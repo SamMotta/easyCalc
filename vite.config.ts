@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: "autoUpdate",
+      registerType: "prompt",
       injectRegister: "auto",
       workbox: {
         clientsClaim: true,
@@ -16,7 +16,7 @@ export default defineConfig({
       },
 
       devOptions: {
-        enabled: true
+        // enabled: true,
       },
     })
   ]
