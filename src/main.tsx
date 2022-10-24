@@ -5,9 +5,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 
 /* Routes! */
-// Layout Route and Index
+// Layout Route, Home and Error pages
 import Root from './pages/Root'
 import Home from './pages/Home'
+import ErrorPage from './pages/ErrorPage'
 
 // Math Functions
 import QuadraticFunction from './pages/functions/QuadraticFunction'
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <h1>Rota desconhecida!</h1>,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         element: <QuadraticFunction />
       },
       {
-        path: "funcoes/funcaoAfim",
+        path: "funcao/funcaoAfim",
         element: <AffineFunction />
       },
       {
