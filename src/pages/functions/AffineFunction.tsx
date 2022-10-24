@@ -37,7 +37,7 @@ function AffineFunction() {
     }
 
     return (
-        <div className="flex flex-row justify-evenly space-x-reverse space-x-12 pt-16">
+        <div className="flex flex-col space-y-6 items-center pt-8">
             <form onSubmit={handleSubmit(calculate)} className="flex flex-col justify-between space-y-4">
                 <input {...register("valueA", { required: true, valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de A" className="input input-bordered input-primary w-full max-w-xs" />
                 <input {...register("valueB", { required: true, valueAsNumber: true })} autoComplete="off" type="number" placeholder="Valor de B" className="input input-bordered input-secondary w-full max-w-xs" />
@@ -48,7 +48,7 @@ function AffineFunction() {
             {result == null
                 ? null
                 : <div className="flex flex-col justify-center max-w-sm">
-                    <label htmlFor="resultDelta" className="text-xl">f({result.valueX}) é igual a {result.functionValue?.toFixed(2)}</label>
+                    <label htmlFor="resultFunction" className="text-xl">f({result.valueX}) é igual a {result.functionValue?.toFixed(2)}</label>
                 </div>
             }
         </div>
