@@ -20,7 +20,7 @@ function QuadraticFunction() {
     const [result, setResults] = useState<Result>()
 
     // Calculation almost complete. More tests needed!
-    const calculate: SubmitHandler<Inputs> = (data): void =>  {
+    const calculate: SubmitHandler<Inputs> = (data): void => {
         /* Formula 
         delta = b² - 4ac
         
@@ -28,10 +28,8 @@ function QuadraticFunction() {
         ---------------------
                 2a
         */
-
-        const a = data.valueA;
-        const b = data.valueB;
-        const c = data.valueC;
+        const { valueA: a, valueB: b, valueC: c } = data;
+        
         const info: Array<String> = []
         let graphic = "Unknown";
 
