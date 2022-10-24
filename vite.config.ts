@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       base: "/",
-      registerType: "prompt",
+      registerType: "autoUpdate",
       injectRegister: "auto",
       workbox: {
         clientsClaim: true,
